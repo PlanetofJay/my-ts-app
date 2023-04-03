@@ -1,5 +1,3 @@
-import { JsxOpeningElement } from "typescript";
-
 function App() {
   const calcTotal = (value1: number, value2: number) => {
     
@@ -11,8 +9,9 @@ function App() {
   const price = parseInt('5')
   const total: string = calcTotal(price, 6);
   
-  let aux: [string, number];
-  aux = ['abc', 123]
+  let aux: (string | number)[];
+  aux = ['abc', 123, 'def', 456, 789, 'ghi'];
+  aux = [56346];
 
   return (
     <div>
