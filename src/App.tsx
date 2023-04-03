@@ -4,10 +4,14 @@ function App() {
     
     // explicitly declare the type
     let sum: number = value1 + value2;
-    return sum;
+    return sum.toFixed(2);
   }
 
   const total = calcTotal(3, 6);
+  
+  let isValid: boolean;
+  
+  isValid = total !== '';
 
   return (
     <div>
