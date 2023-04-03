@@ -11,19 +11,8 @@ function App() {
   const price = parseInt('5')
   const total: string = calcTotal(price, 6);
   
-  let aux: number[] | string[];
-  aux = 'abc';
-  aux = 8;
-  aux = true;
-
-  aux = [];
-  aux = ['abc', 'def'];
-  aux = [123, 456, 789];
-  aux = [true, false]
-
-  aux = {};
-  aux = null;
-  aux = undefined;
+  let aux: [string, number];
+  aux = ['abc', 123]
 
   return (
     <div>
