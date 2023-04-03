@@ -1,6 +1,6 @@
 
 function App() {
-  const calcTotal = (value1, value2) => {
+  const calcTotal = (value1: number, value2: number) => {
     let sum = value1 + value2;
     return sum;
   }
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div>
-      Total:
+      Total: {total}
     </div>
   );
 }
