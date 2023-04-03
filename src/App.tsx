@@ -1,6 +1,8 @@
 
 function App() {
-  const doubleValue = (value?: any) => {
+  // If you don't care of the type of develop then
+  // type script also don't care to validate everything for you.
+  const doubleValue = (value?: number | string | number[] ) => {
     if (!value) {
       return 'None';
     }
