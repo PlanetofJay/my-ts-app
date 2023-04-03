@@ -1,7 +1,9 @@
 
 function App() {
   const calcTotal = (value1: number, value2: number) => {
-    let sum = value1 + value2;
+    
+    // explicitly declare the type
+    let sum: number = value1 + value2;
     return sum;
   }
 
