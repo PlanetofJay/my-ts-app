@@ -1,20 +1,26 @@
 function App() {
-  const calcTotal = (value1: number, value2: number, value3?: number) => {
-    let sum: number = value1 + value2;
-    if (value3) {
-      // sum = sum + value3;
-      sum += value3;
+  const doubleValue = (value: number | string) => {
+
+    // Validate the typeof
+    if (typeof value === 'string') {
+      value = value + value;
     }
-    return sum.toFixed(2);
+    else {
+      value = value * 2;
+    }
+
+    return value;
   }
 
-  const price = parseInt('5')
-  const total: string = calcTotal(price, 6);
-  const total2: string = calcTotal(3, 7, 5);
+  const result1 = doubleValue(8);
+
+  // doubleValue('John') >> 'JohnJohn' >> value + value
+  const result2 = doubleValue('John');
 
   return (
     <div>
-      Total: {total} and {total2}
+      <div>First Result is {result1}</div>
+      <div>Second Result is {result2}</div>
     </div>
   );
 }
