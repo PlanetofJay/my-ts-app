@@ -7,7 +7,8 @@ function App() {
     return sum.toFixed(2);
   }
 
-  const total = calcTotal(3, 6);
+  const price = parseInt('5')
+  const total: string = calcTotal(price, 6);
   
   let isValid: boolean;
   
