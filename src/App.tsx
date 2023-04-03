@@ -1,5 +1,5 @@
 function App() {
-  const calcTotal = (value1: number, value2: number) => {
+  const calcTotal = (value1: number, value2: number, value3?: number) => {
     
     // explicitly declare the type
     let sum: number = value1 + value2;
@@ -8,10 +8,7 @@ function App() {
 
   const price = parseInt('5')
   const total: string = calcTotal(price, 6);
-  
-  let aux: (string | number)[];
-  aux = ['abc', 123, 'def', 456, 789, 'ghi'];
-  aux = [56346];
+  const total2: string = calcTotal(3, 7, 5);
 
   return (
     <div>
