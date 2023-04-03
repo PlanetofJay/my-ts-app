@@ -1,8 +1,10 @@
 function App() {
   const calcTotal = (value1: number, value2: number, value3?: number) => {
-    
-    // explicitly declare the type
     let sum: number = value1 + value2;
+    if (value3) {
+      // sum = sum + value3;
+      sum += value3;
+    }
     return sum.toFixed(2);
   }
 
@@ -12,7 +14,7 @@ function App() {
 
   return (
     <div>
-      Total: {total}
+      Total: {total} and {total2}
     </div>
   );
 }
