@@ -1,5 +1,9 @@
+
 function App() {
-  const doubleValue = (value: number | string) => {
+  const doubleValue = (value?: number | string) => {
+    if (!value) {
+      return '';
+    }
 
     // Validate the typeof
     if (typeof value === 'string') {
@@ -8,13 +12,10 @@ function App() {
     else {
       value = value * 2;
     }
-
     return value;
   }
 
   const result1 = doubleValue(8);
-
-  // doubleValue('John') >> 'JohnJohn' >> value + value
   const result2 = doubleValue('John');
 
   return (
