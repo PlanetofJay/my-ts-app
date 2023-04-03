@@ -10,9 +10,10 @@ function App() {
   const price = parseInt('5')
   const total: string = calcTotal(price, 6);
   
-  let isValid: boolean;
-  
-  isValid = total !== '';
+  let aux: string | number | boolean;
+  aux = 'abc';
+  aux = 8;
+  aux = true;
 
   return (
     <div>
