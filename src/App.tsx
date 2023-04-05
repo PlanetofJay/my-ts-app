@@ -1,15 +1,24 @@
-
 function App() {
 
-  const getStatusMessage = (isPublished: boolean): string => {
-    if (isPublished) {
+  enum EStatus {
+    Draft, 
+    Published,
+    Archived
+  }
+
+  // Draft, Published, Archived
+  const getStatusMessage = (status: EStatus): string => {
+    if (status === EStatus.Draft) {
+      return 'This is just a draft.';
+    }
+    else if (status === EStatus.Published) {
       return 'This has been published.';
     }
     else {
-      return 'This is not published yet.'
+      return 'This has been archived.';
     }
   }
-  const statusMessage = getStatusMessage(true);
+  const statusMessage = getStatusMessage(EStatus.Published);
 
   return (
     <div>
