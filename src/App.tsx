@@ -1,6 +1,5 @@
 
 function App() {
-  // it's always better if we explicitly declared type that we intend for our functions as well.
   const doubleValue = (value?: number | string): string => {
     if (!value) {
       return 'None';
@@ -20,6 +19,11 @@ function App() {
   const result1 = doubleValue(8);
   const result2 = doubleValue('John');
   const result3 = doubleValue();
+
+  const showAlert = (): void => {
+    alert('ok');
+  }
+  showAlert();
 
   return (
     <div>
