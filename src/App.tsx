@@ -1,28 +1,60 @@
 function App() {
 
-  enum EStatus {
-    Draft, 
-    Published,
-    Archived
+  interface ITask {
+    id: number,
+    description: string,
+    done?: boolean
   }
 
-  // Draft, Published, Archived
-  const getStatusMessage = (status: EStatus): string => {
-    if (status === EStatus.Draft) {
-      return 'This is just a draft.';
+  const task :ITask = {
+    id: 1,
+    description: 'My single task',
+    done: false
+  }
+
+  const tasks: ITask[] = [
+    {
+      id: 2,
+      description: 'My first task',
+      done: false
+    },
+    {
+      id: 3,
+      description: 'My second task',
+      done: true
+    },
+    {
+      id: 4,
+      description: 'My third task',
+      done: false
     }
-    else if (status === EStatus.Published) {
-      return 'This has been published.';
-    }
-    else {
-      return 'This has been archived.';
+  ];
+
+  /**
+   * Object used for creating a sending domain.
+   */
+  interface ISendingDomain {
+    /** The domain you are sending from. */
+    domain: string,
+    tracking_domain?: string,
+    dkim?: {
+      signing_domain?: string,
+      private: string,
+      public: string,
+      selector: string,
+      headers?: string
     }
   }
-  const statusMessage = getStatusMessage(EStatus.Published);
+
+  let sendingDomain: ISendingDomain;
+
 
   return (
     <div>
-      <div>Status: {statusMessage}</div>
+      <div>{task.id}</div>
+      <div>{task.description}</div>
+      <div>{task.done}</div>
+      <div></div>
     </div>
   );
 }
