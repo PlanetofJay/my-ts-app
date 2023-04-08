@@ -1,8 +1,4 @@
-interface ITask {
-  id: number,
-  description: string,
-  done?: boolean
-}
+import { ITask } from "../../interfaces";
 
 export default function Task({ id, description, done }: ITask) {
   const status: string = done
