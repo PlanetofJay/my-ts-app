@@ -36,18 +36,33 @@ function App() {
   interface ISendingDomain {
     /** The domain you are sending from. */
     domain: string,
+    /** Associated tracking domain. */
     tracking_domain?: string,
-    dkim?: {
-      signing_domain?: string,
-      private: string,
-      public: string,
-      selector: string,
-      headers?: string
-    }
+    /** Object in which DKIM key configuration is defined. */
+    dkim?: IDKIM
   }
 
-  let sendingDomain: ISendingDomain;
+  interface IDKIM {
+    /** Value used as the Signing Domain Identifier (SDID). */
+    signing_domain?: string,
+    private: string,
+    public: string,
+    selector: string,
+    headers?: string
+  }
 
+  /**
+   * Used for registering a new device
+   * to one of your OneSignal apps.
+   */
+  interface IAddDevice {
+    /** Your OneSignal App Id found in Keys & IDs */
+    app_id: string,
+    /** The device's platform. */
+    device_type: number
+  }
+
+  let addDevice: IAddDevice;
 
   return (
     <div>
