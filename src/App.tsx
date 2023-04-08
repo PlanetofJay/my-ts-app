@@ -1,15 +1,25 @@
-import { categories, getCategory } from './includes/category';
-import { statuses, getStatus } from './includes/status';
+import Task from "./components/Task";
 
 function App() {
 
-  const category = getCategory('ent');
-  const status = getStatus('p');
-
   return (
     <div>
-      <div>Category: {category?.text}</div>
-      <div>Status: {status?.text}</div>
+      <Task 
+        id={1}
+        description='My first task'
+        done={true}
+      />
+
+      <Task
+        id={2}
+        description='My second task'
+        done={true}
+      />
+      <Task
+        id={3}
+        description='My third tasks'
+        done={false}
+      />
     </div>
   );
 }
