@@ -59,17 +59,43 @@ function App() {
     /** Your OneSignal App Id found in Keys & IDs */
     app_id: string,
     /** The device's platform. */
-    device_type: number
+    device_type: EDeviceType
+  }
+
+  enum EDeviceType {
+    iOS = 0,
+    Android = 1,
+    Amazon = 2,
+    Email = 11,
+    SMS = 14
   }
 
   let addDevice: IAddDevice;
 
+  enum IStatus {
+    /** Used when the post is not ready. */
+    Draft = 'draft',
+    /** Used when the post has been released. */
+    Published = 'published',
+    /** Used when the post has been archived. */
+    Archived = 'archived',
+    /** Used when the post needs to be reviewed. */
+    Review = 'review'
+  }
+
+  let status: IStatus;
+  status = IStatus.Published;
+
   return (
     <div>
-      <div>{task.id}</div>
       <div>{task.description}</div>
-      <div>{task.done}</div>
-      <div></div>
+      {tasks.map((task) => (
+        <div key={task.id}>
+          {task.description} - {task.done ? 'Completed' : 'Open'}
+        </div>
+      ))}
+
+      <div>Status: {status}</div>
     </div>
   );
 }
